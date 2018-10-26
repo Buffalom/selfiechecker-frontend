@@ -1,7 +1,7 @@
 <template>
-<v-container row wrap >
+<v-container row wrap fill-height>
   
-  <v-layout align-center justify-center fill-height>
+  <v-layout align-center justify-center>
     <div>
       <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
       <v-btn

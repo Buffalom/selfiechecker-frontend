@@ -1,10 +1,10 @@
 <template>
   <div>
+      
      <v-navigation-drawer app>
 
-      
-
      </v-navigation-drawer>
+
       <v-toolbar app>
 
         <v-layout justify-start>
@@ -16,6 +16,7 @@
         </v-layout>
 
       </v-toolbar>
+
   </div>
 </template>
 
