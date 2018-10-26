@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages-deploy",
+    "deploy": "gh-pages-deploy -- 'Deploying to GitHub Pages'",
     "clean-source": "rimraf README.md src webroot package.json"
   },
   "dependencies": {
@@ -38,7 +38,6 @@
   ],
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "commit": "Deploying to GitHub Pages",
     "post": [
       "clean-source"
     ],
