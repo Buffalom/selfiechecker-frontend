@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-footer app>
-        
-    </v-footer>
+    <v-footer app></v-footer>
   </div>
 </template>
 
