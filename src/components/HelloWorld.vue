@@ -1,9 +1,9 @@
 <template>
-<v-container row wrap fill-height>
+<v-container fill-height>
   
-  <v-layout align-center justify-center>
+  <v-layout row wrap align-center justify-center>
     <div>
-      <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
+      <input id="snap" type="file" accept="image/*;capture=camera" @change=onUpload hidden>
       <v-btn
         @click="chooseFiles()"
         color="pink"
@@ -13,18 +13,17 @@
         <v-icon>camera_alt</v-icon>
       </v-btn>
     </div>
-  </v-layout>
-
-  <v-layout row wrap>
+  
       <v-flex xs12 md10>
         <v-card class="my-1">
           <v-layout align-center justify-center>
-              <v-img :src="source"></v-img>
+              <img :src="previewImage" class="uploading-image"/>
+              
           </v-layout>
         </v-card>
         <v-card class="my-1">
           <v-layout align-center justify-center>
-              <v-img :src="outcome"></v-img>
+              
           </v-layout>
           <v-card-actions>
             <v-btn color="primary">Add to fanbook</v-btn>
@@ -38,19 +37,36 @@
 <script>
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String
+  data() {
+    return {
+      previewImage: null
+    };
   },
   methods: {
     chooseFiles() {
-      document.getElementById("fileUpload").click();
+      document.getElementById("snap").click();
     },
-    onUpload() {
+    onUpload(e) {
       // upload file
+      const image = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(image);
+      reader.onload = e => {
+        this.previewImage = e.target.result;
+        this.hasPic = true;
+      };
     }
   }
 };
 </script>
+
+<style>
+.uploading-image {
+  display: flex;
+  max-width: 80vw;
+  max-height: 200px;
+}
+</style>
 
 
 
