@@ -24,6 +24,16 @@
           <v-layout align-center justify-center>
               <v-img :src="outcome"></v-img>
           </v-layout>
+          <v-layout>
+            <ul>
+              <li>Name: </li>
+              <li>Number: </li>
+              <li>Age: </li>
+              <li>Nationality: </li>
+              <li># of games: </li>
+              <li># of goals: </li>
+            </ul>
+          </v-layout>
           <v-card-actions>
             <v-btn class="black--text" color="primary">Add to fanbook</v-btn>
           </v-card-actions>
