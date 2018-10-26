@@ -1,13 +1,13 @@
 <template>
   <v-container>
-  
+
     <v-layout column justify-center>
       <v-layout justify-center>
-        <input id="snap" type="file" accept="image/*;capture=camera" @change="onUpload" hidden>
+        <input id="snap" type="file" accept="image/*capture=camera" @change="onUpload" hidden>
         <v-btn
           @click="chooseFiles()"
           color="pink"
-          dark    
+          dark
           fab
           >
           <v-icon>camera_alt</v-icon>
@@ -25,7 +25,7 @@
         >
         </v-progress-circular>
       </v-layout>
-    
+
       <v-flex v-show="hasPic">
         <v-card class="my-1">
           <v-layout align-center justify-center>
@@ -58,8 +58,8 @@
 
 <script>
 export default {
-  name: "HelloWorld",
-  data() {
+  name: 'HelloWorld',
+  data () {
     return {
       hasPic: false,
       loading: false,
@@ -67,35 +67,35 @@ export default {
       offsetTop: 0,
       interval: {},
       progressValue: 0
-    };
+    }
   },
   methods: {
-    chooseFiles() {
-      document.getElementById("snap").click();
+    chooseFiles () {
+      document.getElementById('snap').click()
     },
-    onUpload(e) {
+    onUpload (e) {
       // upload file
-      const image = e.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(image);
+      const image = e.target.files[0]
+      const reader = new FileReader()
+      reader.readAsDataURL(image)
       reader.onload = e => {
-        this.previewImage = e.target.result;
-        this.loading = true;
-        this.showSpinner();
-      };
-    },
-    showSpinner(){
-      this.interval = setInterval(() => {
-      if (this.progressValue === 100) {
-        this.hasPic = true;
-        this.loading = false;
-        return (this.progressValue = 0)
+        this.previewImage = e.target.result
+        this.loading = true
+        this.showSpinner()
       }
-      this.progressValue += 10
-    }, 300)
+    },
+    showSpinner () {
+      this.interval = setInterval(() => {
+        if (this.progressValue === 100) {
+          this.hasPic = true
+          this.loading = false
+          return (this.progressValue = 0)
+        }
+        this.progressValue += 10
+      }, 300)
     }
   }
-};
+}
 </script>
 
 <style lang="css">
@@ -105,7 +105,3 @@ export default {
   max-height: 200px;
 }
 </style>
-
-
-
-

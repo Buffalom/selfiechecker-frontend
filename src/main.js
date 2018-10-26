@@ -9,8 +9,8 @@ import './registerServiceWorker'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: "#F9CC11",
-    secondary: "#DA2323"
+    primary: '#F9CC11',
+    secondary: '#DA2323'
   }
 })
 

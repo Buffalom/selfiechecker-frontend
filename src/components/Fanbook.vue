@@ -35,78 +35,79 @@
 
 <script>
 export default {
-  name: "HelloWorld",
-  data() {
-      return {
-        user: {
-            name: "SuperFan",
-            wins: 2
+  name: 'Fanbook',
+  data () {
+    return {
+      user: {
+        name: 'SuperFan',
+        wins: 2
+      },
+      players: [
+        {
+          number: 1,
+          name: 'Marco Wölfli',
+          selfie: false,
+          source: ''
         },
-        players: [
-            {
-                number: 1,
-                name: "Marco Wölfli",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 4,
-                name: "Mohamed Ali Camara",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 5,
-                name: "Steve von Bergen",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 6,
-                name: "Leonardo Bertone",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 7,
-                name: "Miralem Sulejmani",
-                selfie: true,
-                source: 'https://tmssl.akamaized.net/images/portrait/originals/36080-1533136216.jpg'
-            },
-            {
-                number: 8,
-                name: "Djibril Sow",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 13,
-                name: "Nicolas Moumi Ngamaleu",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 16,
-                name: "Christian Fassnacht",
-                selfie: false,
-                source: ''
-            },
-            {
-                number: 17,
-                name: "Roger Assalé",
-                selfie: true,
-                source: 'https://tmssl.akamaized.net/images/portrait/originals/263183-1533136348.jpg'
-            }
+        {
+          number: 4,
+          name: 'Mohamed Ali Camara',
+          selfie: false,
+          source: ''
+        },
+        {
+          number: 5,
+          name: 'Steve von Bergen',
+          selfie: false,
+          source: ''
+        },
+        {
+          number: 6,
+          name: 'Leonardo Bertone',
+          selfie: false,
+          source: ''
+        },
+        {
+          number: 7,
+          name: 'Miralem Sulejmani',
+          selfie: true,
+          source:
+            'https://tmssl.akamaized.net/images/portrait/originals/36080-1533136216.jpg'
+        },
+        {
+          number: 8,
+          name: 'Djibril Sow',
+          selfie: false,
+          source: ''
+        },
+        {
+          number: 13,
+          name: 'Nicolas Moumi Ngamaleu',
+          selfie: false,
+          source: ''
+        },
+        {
+          number: 16,
+          name: 'Christian Fassnacht',
+          selfie: false,
+          source: ''
+        },
+        {
+          number: 17,
+          name: 'Roger Assalé',
+          selfie: true,
+          source:
+            'https://tmssl.akamaized.net/images/portrait/originals/263183-1533136348.jpg'
+        }
       ]
-      }
+    }
   }
-};
+}
 </script>
 
 <style lang="css" scoped>
 .fixedSize {
-    height: 300px; 
-    width: auto;
+  height: 300px;
+  width: auto;
 }
 </style>
-

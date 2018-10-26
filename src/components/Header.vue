@@ -7,7 +7,7 @@
         </v-layout>
 
         <v-layout justify-end>
-            <v-btn class="black--text" color='primary' @click="openFanbook">FANBOOK</v-btn> 
+            <v-btn class="black--text" color='primary' @click="openFanbook">FANBOOK</v-btn>
         </v-layout>
 
       </v-toolbar>
@@ -16,12 +16,11 @@
 
 <script>
 export default {
-  name: "app-header",
+  name: 'app-header',
   methods: {
-    openFanbook() {
-      this.$router.push("/fanbook");
+    openFanbook () {
+      this.$router.push('/fanbook')
     }
   }
-};
+}
 </script>
-

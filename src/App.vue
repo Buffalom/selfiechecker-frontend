@@ -7,24 +7,18 @@
       </v-content>
       <!-- <AppFooter/> -->
     </v-app>
-  </div> 
+  </div>
 </template>
 
 <script>
-import AppFooter from "./components/Footer.vue";
-import AppHeader from "./components/Header.vue";
+import AppFooter from './components/Footer.vue'
+import AppHeader from './components/Header.vue'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     AppFooter,
     AppHeader
   }
-};
+}
 </script>
-
-
-
-
-
-
