@@ -1,20 +1,19 @@
 <template>
-<v-container grid-list-md text-xs-center>
-  <div class="hello">
-    <v-btn color='primary' @click="openFanbook">FANBOOK</v-btn>
-    <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
-    <v-btn
-      @click="chooseFiles()"
-      color="pink"
-      dark    
-      fab
-      >
-      <v-icon>camera_alt</v-icon>
-    </v-btn>
-
-    
-        
-  </div>
+<v-container row wrap >
+  
+  <v-layout align-center justify-center fill-height>
+    <div>
+      <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
+      <v-btn
+        @click="chooseFiles()"
+        color="pink"
+        dark    
+        fab
+        >
+        <v-icon>camera_alt</v-icon>
+      </v-btn>
+    </div>
+  </v-layout>
 </v-container>
 </template>
 
@@ -25,9 +24,6 @@ export default {
     msg: String
   },
   methods: {
-    openFanbook() {
-      this.$router.push("/fanbook");
-    },
     chooseFiles() {
       document.getElementById("fileUpload").click();
     },
