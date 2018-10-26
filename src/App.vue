@@ -2,8 +2,10 @@
   <div id="app">
     <v-app>
       <AppHeader/>
-      <router-view/>
-      <AppFooter/>
+      <v-content>
+        <router-view/>
+      </v-content>
+      <!-- <AppFooter/> -->
     </v-app>
   </div> 
 </template>

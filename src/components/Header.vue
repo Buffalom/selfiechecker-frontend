@@ -1,6 +1,5 @@
 <template>
   <div>
-
       <v-toolbar app>
 
         <v-layout justify-start>
@@ -12,7 +11,6 @@
         </v-layout>
 
       </v-toolbar>
-
   </div>
 </template>
 
