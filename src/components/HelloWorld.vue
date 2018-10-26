@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <v-btn color='success' @click="openFanbook">FANBOOK</v-btn>
+    <v-btn color='primary' @click="openFanbook">FANBOOK</v-btn>
     <v-btn
-              color="pink"
+              color="secondary"
               dark
               small    
               fab

@@ -1,7 +1,6 @@
 <template>
   <div>
       <!-- HERE COMES ICONS -->
-      <!-- Title -->
       <h4>Fanbook of {{user.name}}</h4>
       <!-- CARDS -->
   </div>

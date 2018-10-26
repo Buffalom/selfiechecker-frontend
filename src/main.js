@@ -7,7 +7,12 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: "#F9CC11",
+    secondary: "#DA2323"
+  }
+})
 
 Vue.config.productionTip = false
 
