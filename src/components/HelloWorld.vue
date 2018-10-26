@@ -1,19 +1,31 @@
 <template>
-<v-container>
+  <v-container>
   
-  <v-layout column justify-center>
-    <v-layout justify-center>
-      <input id="snap" type="file" accept="image/*;capture=camera" @change="onUpload" hidden>
-      <v-btn
-        @click="chooseFiles()"
-        color="pink"
-        dark    
-        fab
+    <v-layout column justify-center>
+      <v-layout justify-center>
+        <input id="snap" type="file" accept="image/*;capture=camera" @change="onUpload" hidden>
+        <v-btn
+          @click="chooseFiles()"
+          color="pink"
+          dark    
+          fab
+          >
+          <v-icon>camera_alt</v-icon>
+        </v-btn>
+      </v-layout>
+
+      <v-layout justify-center>
+        <v-progress-circular
+        v-show="loading"
+        :rotate="-90"
+        :size="100"
+        :width="15"
+        :value="progressValue"
+        color="primary"
         >
-        <v-icon>camera_alt</v-icon>
-      </v-btn>
-    </v-layout>
-  
+        </v-progress-circular>
+      </v-layout>
+    
       <v-flex v-show="hasPic">
         <v-card class="my-1">
           <v-layout align-center justify-center>
@@ -50,8 +62,11 @@ export default {
   data() {
     return {
       hasPic: false,
+      loading: false,
       previewImage: null,
-      offsetTop: 0
+      offsetTop: 0,
+      interval: {},
+      progressValue: 0
     };
   },
   methods: {
@@ -65,8 +80,19 @@ export default {
       reader.readAsDataURL(image);
       reader.onload = e => {
         this.previewImage = e.target.result;
-        this.hasPic = true;
+        this.loading = true;
+        this.showSpinner();
       };
+    },
+    showSpinner(){
+      this.interval = setInterval(() => {
+      if (this.progressValue === 100) {
+        this.hasPic = true;
+        this.loading = false;
+        return (this.progressValue = 0)
+      }
+      this.progressValue += 10
+    }, 300)
     }
   }
 };
