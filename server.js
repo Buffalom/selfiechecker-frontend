@@ -1,8 +1,5 @@
-var shell = require('shelljs')
 var express = require('express')
 var app = express()
-
-shell.exec('npm run build')
 
 app.use(express.static('dist'))
 
