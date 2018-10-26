@@ -1,7 +1,7 @@
 <template>
 <v-container grid-list-md text-xs-center>
   <div class="hello">
-    <v-btn color='success'> FME </v-btn>
+    <v-btn color='primary' @click="openFanbook">FANBOOK</v-btn>
     <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
     <v-btn
       @click="chooseFiles()"
@@ -25,6 +25,9 @@ export default {
     msg: String
   },
   methods: {
+    openFanbook() {
+      this.$router.push("/fanbook");
+    },
     chooseFiles() {
       document.getElementById("fileUpload").click();
     },
