@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
       <!-- Icons -->
       <v-layout justify-end>
           <v-icon :class="[{'primary': user.wins >= 1},'align-right ma-2']">grade</v-icon>
@@ -30,7 +30,7 @@
               </v-card>
             </v-flex>
       </v-layout>
-  </div>
+  </v-container>
 </template>
 
 <script>
