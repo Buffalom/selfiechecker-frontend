@@ -12,20 +12,20 @@
       <!-- Title -->
       <h1 class="ml-2">Fanbook of {{user.name}}</h1>
 
-      <!-- CARDS -->
+      <!-- CARDS with Players-->
       <v-layout row wrap>
-            <v-flex v-for="player in players" :key="player.number" xs4>
-              <v-card>
+            <v-flex v-for="player in players" :key="player.number" xs12 md4>
+              <v-card class="my-1">
                 <v-layout justify-space-between>
                     <span class="headline ma-1" v-text="player.name"></span>
                     <span class="headline ma-1" v-text="player.number"></span>
                 </v-layout>
-                <v-layout justify-center>
-                <v-icon v-if="!player.selfie">person</v-icon>
-                <v-img v-else :src="player.source"></v-img>
+                <v-layout class="fixedSize" align-center justify-center>
+                    <v-icon x-large v-if="!player.selfie">person</v-icon>
+                    <v-img class="fixedSize" v-else :src="player.source"></v-img>
                 </v-layout>
                 <v-card-actions>
-                  <v-btn color="primary">Add to fanbook</v-btn>
+                  <v-btn color="primary">Details</v-btn>
                 </v-card-actions>
               </v-card>
             </v-flex>
@@ -71,7 +71,7 @@ export default {
                 number: 7,
                 name: "Miralem Sulejmani",
                 selfie: true,
-                source: ''
+                source: 'https://tmssl.akamaized.net/images/portrait/originals/36080-1533136216.jpg'
             },
             {
                 number: 8,
@@ -88,14 +88,14 @@ export default {
             {
                 number: 16,
                 name: "Christian Fassnacht",
-                selfie: true,
+                selfie: false,
                 source: ''
             },
             {
                 number: 17,
                 name: "Roger Assalé",
-                selfie: false,
-                source: ''
+                selfie: true,
+                source: 'https://tmssl.akamaized.net/images/portrait/originals/263183-1533136348.jpg'
             }
       ]
       }
@@ -103,4 +103,10 @@ export default {
 };
 </script>
 
+<style lang="css" scoped>
+.fixedSize {
+    height: 300px; 
+    width: auto;
+}
+</style>
 
