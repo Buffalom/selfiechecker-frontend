@@ -1,20 +1,20 @@
 <template>
-<v-container row wrap fill-height>
-  
-  <v-layout row wrap align-center justify-center>
-    <div>
-      <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
-      <v-btn
-        @click="chooseFiles()"
-        color="pink"
-        dark    
-        fab
-        >
-        <v-icon>camera_alt</v-icon>
-      </v-btn>
-    </div>
+  <v-container fill-height>
+    
+    <v-layout column align-center justify-center>
+      <div>
+        <input id="fileUpload" type="file" accept="image/*;capture=camera" hidden>
+        <v-btn
+          @click="chooseFiles()"
+          color="pink"
+          dark    
+          fab
+          >
+          <v-icon>camera_alt</v-icon>
+        </v-btn>
+      </div>
 
-      <v-flex xs12 md10>
+      <div v-show="hasPic">
         <v-card class="my-1">
           <v-layout align-center justify-center>
               <v-img :src="source"></v-img>
@@ -28,16 +28,18 @@
             <v-btn class="black--text" color="primary">Add to fanbook</v-btn>
           </v-card-actions>
         </v-card>
-      </v-flex>
+      </div>
     </v-layout>
-</v-container>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String
+  data () {
+    return {
+      hasPic: true,
+    }
   },
   methods: {
     chooseFiles() {
