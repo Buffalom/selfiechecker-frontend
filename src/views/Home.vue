@@ -9,6 +9,9 @@
             color="#DA2323"
             dark
             fab
+            bottom
+            right
+            fixed
             class="v-btn--x-large"
             >
             <v-icon>camera_alt</v-icon>
@@ -122,11 +125,11 @@ export default {
 
 <style lang="scss" scoped>
 .v-btn--x-large {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 
   i {
-    font-size: 50px;
+    font-size: 46px;
   }
 }
 
