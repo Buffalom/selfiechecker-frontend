@@ -3,11 +3,12 @@
     <v-toolbar app>
 
       <v-layout justify-start>
-        <v-img max-height='40' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
+        <v-img @click="$router.push('/')" max-height='40' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
       </v-layout>
 
       <v-layout justify-end>
-        <v-btn class="black--text" color='primary' @click="openFanbook">FANBOOK</v-btn>
+        <v-btn v-if="isOnRoot" class="black--text" color='primary' @click="$router.push('/fanbook')">Fanbook</v-btn>
+        <v-btn v-else class="black--text" color='primary' @click="$router.push('/')">Checker</v-btn>
       </v-layout>
 
     </v-toolbar>
@@ -18,13 +19,15 @@
 export default {
   name: 'app-header',
   methods: {
-    openFanbook () {
-      this.$router.push('/fanbook')
+    goTo (path) {
+      this.$router.push(path)
     }
   },
   computed: {
     baseUrl: () => process.env.BASE_URL,
-    isOnRoot: () => this.$route.path.length <= 1
+    isOnRoot () {
+      return this.$route.path.length <= 1
+    }
   }
 }
 </script>
