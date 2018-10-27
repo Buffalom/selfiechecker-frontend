@@ -128,6 +128,7 @@ export default {
         }).then(response => {
           this.player = response.data
           this.hasPic = true
+          this.errorSnackbar = false
         }).catch(error => {
           if (error) {
             this.hasPic = false
