@@ -108,12 +108,11 @@ export default {
           },
           data: e.target.result
         }).then(response => {
-          console.log(response.data)
           this.player = response.data
           this.hasPic = true
         }).catch(error => {
           if (error) {
-            console.dir(error)
+            console.error(error)
           }
         }).finally(response => {
           this.loading = false
