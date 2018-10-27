@@ -11,9 +11,11 @@
     "clean-source": "rimraf README.md src webroot package.json"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "material-design-icons-iconfont": "^3.0.3",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
+    "vue-axios": "^2.1.4",
     "vue-router": "^3.0.1",
     "vuetify": "^1.3.3",
     "vuex": "^3.0.1"

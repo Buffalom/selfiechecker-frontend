@@ -1,16 +1,16 @@
 <template>
   <div>
-      <v-toolbar app>
+    <v-toolbar app>
 
-        <v-layout justify-start>
-            <v-img max-height='40' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
-        </v-layout>
+      <v-layout justify-start>
+        <v-img max-height='40' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
+      </v-layout>
 
-        <v-layout justify-end>
-            <v-btn class="black--text" color='primary' @click="openFanbook">FANBOOK</v-btn>
-        </v-layout>
+      <v-layout justify-end>
+        <v-btn class="black--text" color='primary' @click="openFanbook">FANBOOK</v-btn>
+      </v-layout>
 
-      </v-toolbar>
+    </v-toolbar>
   </div>
 </template>
 
@@ -23,7 +23,8 @@ export default {
     }
   },
   computed: {
-    baseUrl: () => process.env.BASE_URL
+    baseUrl: () => process.env.BASE_URL,
+    isOnRoot: () => this.$route.path.length <= 1
   }
 }
 </script>

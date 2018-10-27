@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -13,6 +15,7 @@ Vue.use(Vuetify, {
     secondary: '#DA2323'
   }
 })
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 

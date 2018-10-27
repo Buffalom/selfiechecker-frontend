@@ -1,35 +1,45 @@
 <template>
   <v-container>
-      <!-- Icons -->
-      <v-layout justify-end>
-          <v-icon :class="[{'primary': user.wins >= 1},'align-right ma-2']">grade</v-icon>
-          <v-icon :class="[{'primary': user.wins >= 2},' ma-2']">local_florist</v-icon>
-          <v-icon :class="[{'primary': user.wins >= 3},' ma-2']">wb_sunny</v-icon>
-          <v-icon :class="[{'primary': user.wins >= 4},' ma-2']">brightness_low</v-icon>
-          <v-icon :class="[{'primary': user.wins >= 5},' ma-2']">insert_emoticon</v-icon>
-      </v-layout>
+    <!-- Icons -->
+    <v-layout justify-end>
+      <v-btn flat icon :class="[{'primary': user.wins >= 1},'align-right ma-2']">
+        <v-icon>grade</v-icon>
+      </v-btn>
+      <v-btn flat icon :class="[{'primary': user.wins >= 2},'align-right ma-2']">
+        <v-icon>local_florist</v-icon>
+      </v-btn>
+      <v-btn flat icon :class="[{'primary': user.wins >= 3},'align-right ma-2']">
+        <v-icon>wb_sunny</v-icon>
+      </v-btn>
+      <v-btn flat icon :class="[{'primary': user.wins >= 4},'align-right ma-2']">
+        <v-icon>brightness_low</v-icon>
+      </v-btn>
+      <v-btn flat icon :class="[{'primary': user.wins >= 5},'align-right ma-2']">
+        <v-icon>insert_emoticon</v-icon>
+      </v-btn>
+    </v-layout>
 
-      <!-- Title -->
-      <h1 class="ml-2">Fanbook of {{user.name}}</h1>
+    <!-- Title -->
+    <h1 class="ml-2">Fanbook of {{user.name}}</h1>
 
-      <!-- CARDS with Players-->
-      <v-layout row wrap>
-            <v-flex v-for="player in players" :key="player.number" xs12 md4>
-              <v-card class="my-1">
-                <v-layout justify-space-between>
-                    <span class="headline ma-1" v-text="player.name"></span>
-                    <span class="headline ma-1" v-text="player.number"></span>
-                </v-layout>
-                <v-layout class="fixedSize" align-center justify-center>
-                    <v-icon x-large v-if="!player.selfie">person</v-icon>
-                    <v-img class="fixedSize" v-else :src="player.source"></v-img>
-                </v-layout>
-                <v-card-actions>
-                  <v-btn color="primary">Details</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-flex>
-      </v-layout>
+    <!-- CARDS with Players-->
+    <v-layout row wrap>
+      <v-flex v-for="player in players" :key="player.number" xs12 md4>
+        <v-card class="my-1">
+          <v-layout justify-space-between>
+            <span class="headline ma-1" v-text="player.name"></span>
+            <span class="headline ma-1" v-text="player.number"></span>
+          </v-layout>
+          <v-layout class="fixedSize" align-center justify-center>
+            <v-icon x-large v-if="!player.selfie">person</v-icon>
+            <v-img class="fixedSize" v-else :src="player.source"></v-img>
+          </v-layout>
+          <v-card-actions>
+            <v-btn color="primary">Details</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
