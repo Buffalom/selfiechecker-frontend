@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="wallpaper"></div>
+    <div id="wallpaper" :style="{ 'background-image': baseUrl + 'img/icons/bscyb.png' }"></div>
     <v-app>
       <AppHeader/>
       <v-content>
@@ -20,6 +20,9 @@ export default {
   components: {
     AppFooter,
     AppHeader
+  },
+  computed: {
+    baseUrl: () => process.env.BASE_URL
   }
 }
 </script>
@@ -31,7 +34,7 @@ export default {
     width: 100vw;
     position: fixed;
 
-    background: url(/img/bscyb.png);
+    background-image: url(/img/bscyb.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

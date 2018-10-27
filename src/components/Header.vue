@@ -19,10 +19,7 @@ export default {
     }
   },
   computed: {
-    baseUrl: () => process.env.BASE_URL,
-    isOnRoot () {
-      return this.$route.path.length <= 1
-    }
+    baseUrl: () => process.env.BASE_URL
   }
 }
 </script>
