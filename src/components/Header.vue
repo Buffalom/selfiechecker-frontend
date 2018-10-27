@@ -3,12 +3,7 @@
     <v-toolbar app>
 
       <v-layout justify-start>
-        <v-img @click="$router.push('/')" max-height='40' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
-      </v-layout>
-
-      <v-layout justify-end>
-        <v-btn v-if="isOnRoot" class="black--text" color='primary' @click="$router.push('/fanbook')">Fanbook</v-btn>
-        <v-btn v-else class="black--text" color='primary' @click="$router.push('/')">Checker</v-btn>
+        <v-img @click="$router.push('/')" max-height='30' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
       </v-layout>
 
     </v-toolbar>

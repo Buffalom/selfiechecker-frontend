@@ -50,9 +50,6 @@
                 </v-list>
               </v-flex>
             </v-layout>
-            <v-card-actions>
-              <v-btn class="black--text" color="primary">Add to fanbook</v-btn>
-            </v-card-actions>
           </v-card>
         </v-flex>
       </v-layout>

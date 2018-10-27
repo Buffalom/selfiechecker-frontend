@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div id="wallpaper"></div>
     <v-app>
       <AppHeader/>
       <v-content>
@@ -22,3 +23,18 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#app {
+  #wallpaper {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+
+    background: url(/img/bscyb.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+</style>
