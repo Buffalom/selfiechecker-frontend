@@ -18,6 +18,22 @@
           </v-btn>
         </v-layout>
 
+        <v-snackbar
+          v-model="errorSnackbar"
+          :timeout="5000"
+          bottom
+          left
+        >
+          {{ errorMessage }}
+          <v-btn
+            color="#F9CC11"
+            flat
+            @click="errorSnackbar = false"
+          >
+            Close
+          </v-btn>
+        </v-snackbar>
+
         <v-layout justify-center>
           <v-progress-circular
           v-show="loading"
@@ -65,6 +81,8 @@ export default {
   name: 'home',
   data () {
     return {
+      errorSnackbar: false,
+      errorMessage: "Ooops! Make sure you're not blind.",
       hasPic: false,
       loading: false,
       previewImage: null,
@@ -112,7 +130,8 @@ export default {
           this.hasPic = true
         }).catch(error => {
           if (error) {
-            console.error(error)
+            this.hasPic = false
+            this.errorSnackbar = true
           }
         }).finally(response => {
           this.loading = false
