@@ -3,7 +3,7 @@
       <v-toolbar app>
 
         <v-layout justify-start>
-            <v-img max-height='40' contain src="/img/icons/mobiliar.png"/>
+            <v-img max-height='40' contain :src="baseUrl + 'img/icons/mobiliar.png'"/>
         </v-layout>
 
         <v-layout justify-end>
@@ -21,6 +21,9 @@ export default {
     openFanbook () {
       this.$router.push('/fanbook')
     }
+  },
+  computed: {
+    baseUrl: () => process.env.BASE_URL
   }
 }
 </script>
