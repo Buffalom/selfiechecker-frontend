@@ -11,7 +11,7 @@ In diesem Repo findet sich nur das Frontend der App. Das Backend ist in [seinem 
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run serve
 
 # build for production with minification
 npm run build
